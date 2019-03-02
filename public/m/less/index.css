@@ -1,0 +1,122 @@
+html {
+  font-size: 26.6667vw;
+}
+body {
+  font-size: .14rem;
+}
+img {
+  vertical-align: middle;
+}
+#header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 99;
+  height: .45rem;
+  line-height: .45rem;
+  width: 100%;
+  display: flex;
+  background-color: #006699;
+  color: #fff;
+}
+#header .left,
+#header .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: .45rem;
+  height: 0.45rem;
+}
+#header .center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header .center h4 {
+  font-weight: normal;
+}
+#main {
+  position: relative;
+}
+#main .mui-scroll-wrapper {
+  position: relative;
+  height: 100vh;
+}
+#main .mui-scroll-wrapper .mui-scroll {
+  height: auto;
+}
+#main .nav {
+  padding: .1rem;
+}
+#main .nav a {
+  display: block;
+}
+#main .nav a img {
+  width: 100%;
+}
+#main .bananr {
+  padding: 0 .1rem;
+}
+#main .bananr .mui-col-xs-8 a {
+  display: flex;
+}
+#main .bananr .mui-col-xs-8 a img {
+  width: 50%;
+  height: 1.2rem;
+}
+#main .bananr .mui-col-xs-4 a {
+  display: block;
+}
+#main .bananr .mui-col-xs-4 a img {
+  width: 100%;
+  height: 2.4rem;
+}
+#main .pinPai {
+  padding: 10px;
+}
+#main .pinPai img {
+  width: 100%;
+}
+#main .yunDong,
+#main .woman,
+#main .man {
+  padding: 0 10px;
+}
+#main .yunDong .title img,
+#main .woman .title img,
+#main .man .title img {
+  width: 100%;
+}
+#main .yunDong .content a,
+#main .woman .content a,
+#main .man .content a {
+  display: block;
+}
+#main .yunDong .content a img,
+#main .woman .content a img,
+#main .man .content a img {
+  width: 100%;
+}
+#footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  background-color: #006699;
+}
+#footer a {
+  height: .4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+#footer a span {
+  line-height: .14rem;
+}
+#footer a.active {
+  color: orange;
+}
