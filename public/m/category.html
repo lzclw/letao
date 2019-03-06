@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 1. 设置视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自己写乐淘移动端主页</title>
+    <!-- 1. 引入MUI的CSS文件 使用这个没有压缩 mui.css带了rem单位 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 2. 引入fontawesome字体图标库的css文件 提供页面中字体图标-->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 4. 如果想使用swiper轮播图 因为swiper的css-->
+    <link rel="stylesheet" href="./lib/swiper/css/swiper.css">
+    <!-- 3. 引入自己的css文件 -->
+    <link rel="stylesheet" href="./less/category.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <div class="left">
+            <a href="#" class="fa fa-arrow-left"></a>
+        </div>
+        <div class="center">
+            <form>
+                <input type="search" placeholder="请输入要搜索的商品">
+            </form>
+        </div>
+        <div class="right">
+            <!-- 搜索图标 去掉aria等 -->
+            <a class="fa fa-search" href="search.html"></a>
+        </div>
+    </header>
+
+    <!-- 主体区域 -->
+    <main id="main">
+
+        <div class="category-left">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容-->
+                    <ul class="mui-table-view category_click">
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="category-right">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容-->
+                    <div class="mui-row right">
+                        <!-- .mui-col-xs-4*5>a[href="#"]>img[src="/mobile/images/brand$.png"]+p{耐克} -->
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <!-- .mui-col-xs-3*4>a[href="index.html"]>i.fa.fa-home+span{首页} -->
+            <div class="mui-col-xs-3"><a href="index.html"><i class="fa fa-home"></i><span>首页</span></a></div>
+            <div class="mui-col-xs-3"><a href="category.html" class="active"><i class="fa fa-bars"></i><span>分类</span></a></div>
+            <div class="mui-col-xs-3"><a href="cart.html"><i class="fa fa-shopping-cart"></i><span>购物车</span></a></div>
+            <div class="mui-col-xs-3"><a href="user.html"><i class="fa fa-user"></i><span>个人中心</span></a></div>
+        </div>
+    </footer>
+    <!-- 把模板一般放到引包前面 只要保证这个标签能够被js获取就可以了 -->
+    <!-- 左侧分类的模板 -->
+    <script id="categoryLeftTpl" type="text/html">
+        <!-- window.console.log(); 类似window.console.log window可以省略默认就是window点的
+        模板引擎的遍历也是默认就是对象 也不需要写data.rows 直接写rows 
+        为什么each rows是因为调用模板传递的对象里面有rows数组-->        
+        {{each rows value i}}
+            <!-- 因为value不是普通的值是一个对象 对象.属性取值 -->
+     
+            <!-- 三元运算符 判断 i == 0 返回active 否则返回空 -->
+            <li class="mui-table-view-cell {{i == 0 ? 'active' : ''}}" data-id="{{value.id}}">{{value.categoryName}}</li>
+        {{/each}}
+    </script>
+
+    <!-- 右侧分类的模板 -->
+    <script id="categoryRightTpl" type="text/html">
+        {{if list.length>0}}
+    {{each list value i}}
+    <div class="mui-col-xs-4">
+        <a href="#">
+            <img src="{{value.brandLogo}}" alt="">
+            <p>{{value.brandName}}</p>
+        </a>
+    </div>
+    {{ /each }}
+    {{else}}
+    <p>没有了 sb</p>
+    {{/if}}
+    </script>
+
+    <!-- 1. 引入MUI的js文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 2. 引入zepto 获取元素 发送请求 和jq一样的功能适用移动端-->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 3. 有请求使用到模板 引入模板引擎 template-web.js-->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <!-- 4. 引入swiper的js -->
+    <script src="./lib/swiper/js/swiper.js"></script>
+    <!-- 5. 引入自己的js -->
+    <script src="./js/category.js"></script>
+</body>
+
+</html>

@@ -54,6 +54,5 @@ node_modules
 
 数据库连接.txt
 
-#demo
+# 写的一些demo 这个不属于项目代码 忽略掉
 
-./*.html

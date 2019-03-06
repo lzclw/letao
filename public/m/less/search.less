@@ -1,0 +1,44 @@
+@import "base.less";
+
+#main {
+    background-color: #fff;
+
+    .title {
+        padding: .1rem;
+
+        form {
+            display: flex;
+
+            input {
+                margin-bottom: 0;
+                text-align: left;
+                flex: 1;
+                font-size: .14rem;
+                background-color: #fff;
+                height: .36rem;
+                border: .01rem solid @main-color;
+                border-right: 0;
+                border-radius: .06rem 0 0 .06rem;
+            }
+
+            button {
+                height: .36rem;
+                width: .6rem;
+                background-color: @main-color;
+                border-radius: 0 .06rem .06rem 0;
+            }
+        }
+    }
+
+    .mui-card {
+        span{
+            font-size: .14rem;
+        }
+        .mui-card-header {
+            a {
+                color: #666;
+            }
+        }
+
+    }
+}

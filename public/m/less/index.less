@@ -1,136 +1,58 @@
-@import "./base.less";
+@import 'base.less';
 
-#header{
-    width: 100%;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    z-index: 99;
-    height: .45rem;
-    line-height: .45rem;
-    width: 100%;
-    display: flex;
-    background-color: @main-color;
-    color: #fff;
-    
-    .left,
-    .right{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: .45rem;
-        height: .45rem
-    }
-    .center{
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        h4{
-            font-weight: normal;
+/* 主体区域 */
+#main {
+    a {
+        display: block;
+
+        img {
+            width: 100%;
         }
     }
-}
 
-#main{
-    position: relative;
-    // swiper滚动
-    // padding: 45px 0;
-    .mui-scroll-wrapper{
-        position: relative;
-        height: 100vh;
-        .mui-scroll{
-            height: auto;
-        }
+    /* 轮播图区域 */
+    // .slide {}
+
+    /* 导航区域 */
+    .nav {
+        padding: .1rem;
     }
-    // 为swiper解决滚动的
-    // height: 100vh;
-    // .swiper-container {
-    //     height: 100%;
 
-    //     // 子容器的高度 为auto
-    //     .swiper-slide {
-    //         height: auto;
-    //     }
-    // }
-    .nav{
-      padding: .1rem;
-        a{
-            display: block;
-            img{
-                width: 100%;
-
-            }
-        }
-    }
-    .bananr{
+    /* 广告区域 */
+    .banner {
         padding: 0 .1rem;
-        .mui-col-xs-8{
-            a{
+
+        .left {
+            a {
+                // 推荐使用flex布局 让每个图片宽度50% flex布局子元素自动转块不会有间隙
                 display: flex;
-                img{
+
+                img {
                     width: 50%;
                     height: 1.2rem;
                 }
             }
         }
-        .mui-col-xs-4{
-            a{
-                display: block;
-                img{
-                    width: 100%;
+
+        .right {
+            a {
+                img {
+
                     height: 2.4rem;
                 }
             }
         }
     }
-    .pinPai{
-        padding: 10px;
-        img{
-            width: 100%;
-        }
-    }
-    .yunDong,
-    .woman,
-    .man{
-        padding:0 10px;
-        .title{
-            img{
-                width: 100%;
-            }
-        }
-        .content{
-            a{
-                display: block;
-                img{
-                    width: 100%;
-                }
-            }
-        }
 
-    }
-}
+    /* 品牌专区 运动专区 女士 男士专区 使用并集选择器*/
+    .brand,
+    .sport,
+    .women,
+    .man {
+        padding: .1rem;
 
-#footer{
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    z-index: 99;
-    background-color: @main-color;
+        .title {}
 
-    a{
-        height: .4rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        span{
-            line-height: .14rem;
-        }
-        &.active{
-            color: orange;
-        }
+        .content {}
     }
 }
